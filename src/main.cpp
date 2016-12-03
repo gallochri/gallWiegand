@@ -5,8 +5,8 @@
 #include <Wiegand.h>
 
 // These are the pins connected to the Wiegand D0 and D1 signals.
-#define PIN_D0 18
-#define PIN_D1 19
+#define PIN_D0 5
+#define PIN_D1 4
 
 // The object that handles the wiegand protocol
 Wiegand wiegand;
