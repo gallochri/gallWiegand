@@ -24,11 +24,23 @@ void receivedData(uint8_t *data, uint8_t bits, const char *message) {
     Serial.print(message);
 
     //Print value in HEX
-    uint8_t bytes = (bits + 7) / 8;
+    uint8_t bytes = bits;
+    //uint8_t bytes = (bits + 7) / 8;
+    /*
     for (int i = 0; i < bytes; i++) {
+        Serial.print(data[i] < 0x10 ? " 0" : " ");
+        Serial.print(data[i], HEX);
+    }
+    */
+
+    for (int i = 0; i < 144; i++) {
+        if ( (i % 16) == 0 ){
+            Serial.println();
+        }
         Serial.print(data[i] >> 4, 16);
         Serial.print(data[i] & 0xF, 16);
     }
+
     Serial.println();
 }
 
